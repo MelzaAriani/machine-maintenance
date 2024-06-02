@@ -1,0 +1,64 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Maintenance {
+  createdAt       DateTime  @default(now())
+  description     String?
+  id              String    @id @default(cuid())
+  machine         Machine?  @relation(fields: [machineId], references: [id])
+  machineId       String?
+  maintenanceDate DateTime?
+  reporter        String?
+  updatedAt       DateTime  @updatedAt
+}
+
+model Machine {
+  breakdowns           Breakdown[]
+  createdAt            DateTime              @default(now())
+  id                   String                @id @default(cuid())
+  location             String?
+  maintenances         Maintenance[]
+  maintenanceSchedules MaintenanceSchedule[]
+  modelNumber          String?
+  name                 String?
+  updatedAt            DateTime              @updatedAt
+}
+
+model Breakdown {
+  breakdownDate DateTime?
+  createdAt     DateTime  @default(now())
+  description   String?
+  id            String    @id @default(cuid())
+  machine       Machine?  @relation(fields: [machineId], references: [id])
+  machineId     String?
+  reporter      String?
+  updatedAt     DateTime  @updatedAt
+}
+
+model MaintenanceSchedule {
+  createdAt    DateTime  @default(now())
+  id           String    @id @default(cuid())
+  interval     Int?
+  machine      Machine?  @relation(fields: [machineId], references: [id])
+  machineId    String?
+  scheduleDate DateTime?
+  updatedAt    DateTime  @updatedAt
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
