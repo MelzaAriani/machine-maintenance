@@ -14,8 +14,8 @@ import { PrismaService } from "../../prisma/prisma.service";
 import {
   Prisma,
   Machine as PrismaMachine,
-  Breakdown as PrismaBreakdown,
-  Maintenance as PrismaMaintenance,
+  BreakdownReport as PrismaBreakdownReport,
+  MaintenanceReport as PrismaMaintenanceReport,
   MaintenanceSchedule as PrismaMaintenanceSchedule,
 } from "@prisma/client";
 
@@ -54,8 +54,8 @@ export class MachineServiceBase {
 
   async findBreakdowns(
     parentId: string,
-    args: Prisma.BreakdownFindManyArgs
-  ): Promise<PrismaBreakdown[]> {
+    args: Prisma.BreakdownReportFindManyArgs
+  ): Promise<PrismaBreakdownReport[]> {
     return this.prisma.machine
       .findUniqueOrThrow({
         where: { id: parentId },
@@ -65,8 +65,8 @@ export class MachineServiceBase {
 
   async findMaintenances(
     parentId: string,
-    args: Prisma.MaintenanceFindManyArgs
-  ): Promise<PrismaMaintenance[]> {
+    args: Prisma.MaintenanceReportFindManyArgs
+  ): Promise<PrismaMaintenanceReport[]> {
     return this.prisma.machine
       .findUniqueOrThrow({
         where: { id: parentId },

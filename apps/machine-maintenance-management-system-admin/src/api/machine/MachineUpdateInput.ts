@@ -1,11 +1,11 @@
-import { BreakdownUpdateManyWithoutMachinesInput } from "./BreakdownUpdateManyWithoutMachinesInput";
-import { MaintenanceUpdateManyWithoutMachinesInput } from "./MaintenanceUpdateManyWithoutMachinesInput";
+import { BreakdownReportUpdateManyWithoutMachinesInput } from "./BreakdownReportUpdateManyWithoutMachinesInput";
+import { MaintenanceReportUpdateManyWithoutMachinesInput } from "./MaintenanceReportUpdateManyWithoutMachinesInput";
 import { MaintenanceScheduleUpdateManyWithoutMachinesInput } from "./MaintenanceScheduleUpdateManyWithoutMachinesInput";
 
 export type MachineUpdateInput = {
-  breakdowns?: BreakdownUpdateManyWithoutMachinesInput;
+  breakdowns?: BreakdownReportUpdateManyWithoutMachinesInput;
   location?: string | null;
-  maintenances?: MaintenanceUpdateManyWithoutMachinesInput;
+  maintenances?: MaintenanceReportUpdateManyWithoutMachinesInput;
   maintenanceSchedules?: MaintenanceScheduleUpdateManyWithoutMachinesInput;
   modelNumber?: string | null;
   name?: string | null;

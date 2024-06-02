@@ -1,66 +1,6 @@
 [
   {
     "role": "admin",
-    "resource": "Maintenance",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Maintenance",
-    "action": "read:own",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
-    "resource": "Maintenance",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Maintenance",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
-    "resource": "Maintenance",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Maintenance",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
-    "resource": "Maintenance",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Maintenance",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
-    "resource": "Maintenance",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Maintenance",
-    "action": "read:any",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
     "resource": "Machine",
     "action": "read:own",
     "attributes": "*"
@@ -78,31 +18,13 @@
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "Machine",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
     "role": "admin",
     "resource": "Machine",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "Machine",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
     "role": "admin",
-    "resource": "Machine",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
     "resource": "Machine",
     "action": "delete:any",
     "attributes": "*"
@@ -121,61 +43,49 @@
   },
   {
     "role": "admin",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "admin",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "admin",
-    "resource": "Breakdown",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "admin",
-    "resource": "Breakdown",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "admin",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Breakdown",
+    "resource": "MaintenanceReport",
     "action": "read:any",
     "attributes": "*"
   },
@@ -198,31 +108,13 @@
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "MaintenanceSchedule",
-    "action": "create:any",
-    "attributes": "*"
-  },
-  {
     "role": "admin",
     "resource": "MaintenanceSchedule",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
-    "resource": "MaintenanceSchedule",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
     "role": "admin",
-    "resource": "MaintenanceSchedule",
-    "action": "delete:any",
-    "attributes": "*"
-  },
-  {
-    "role": "user",
     "resource": "MaintenanceSchedule",
     "action": "delete:any",
     "attributes": "*"
@@ -236,6 +128,54 @@
   {
     "role": "user",
     "resource": "MaintenanceSchedule",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "BreakdownReport",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "BreakdownReport",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "BreakdownReport",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "BreakdownReport",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "BreakdownReport",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "BreakdownReport",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "BreakdownReport",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "BreakdownReport",
     "action": "read:any",
     "attributes": "*"
   },

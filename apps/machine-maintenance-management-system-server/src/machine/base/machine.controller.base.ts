@@ -26,12 +26,12 @@ import { Machine } from "./Machine";
 import { MachineFindManyArgs } from "./MachineFindManyArgs";
 import { MachineWhereUniqueInput } from "./MachineWhereUniqueInput";
 import { MachineUpdateInput } from "./MachineUpdateInput";
-import { BreakdownFindManyArgs } from "../../breakdown/base/BreakdownFindManyArgs";
-import { Breakdown } from "../../breakdown/base/Breakdown";
-import { BreakdownWhereUniqueInput } from "../../breakdown/base/BreakdownWhereUniqueInput";
-import { MaintenanceFindManyArgs } from "../../maintenance/base/MaintenanceFindManyArgs";
-import { Maintenance } from "../../maintenance/base/Maintenance";
-import { MaintenanceWhereUniqueInput } from "../../maintenance/base/MaintenanceWhereUniqueInput";
+import { BreakdownReportFindManyArgs } from "../../breakdownReport/base/BreakdownReportFindManyArgs";
+import { BreakdownReport } from "../../breakdownReport/base/BreakdownReport";
+import { BreakdownReportWhereUniqueInput } from "../../breakdownReport/base/BreakdownReportWhereUniqueInput";
+import { MaintenanceReportFindManyArgs } from "../../maintenanceReport/base/MaintenanceReportFindManyArgs";
+import { MaintenanceReport } from "../../maintenanceReport/base/MaintenanceReport";
+import { MaintenanceReportWhereUniqueInput } from "../../maintenanceReport/base/MaintenanceReportWhereUniqueInput";
 import { MaintenanceScheduleFindManyArgs } from "../../maintenanceSchedule/base/MaintenanceScheduleFindManyArgs";
 import { MaintenanceSchedule } from "../../maintenanceSchedule/base/MaintenanceSchedule";
 import { MaintenanceScheduleWhereUniqueInput } from "../../maintenanceSchedule/base/MaintenanceScheduleWhereUniqueInput";
@@ -214,17 +214,17 @@ export class MachineControllerBase {
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id/breakdowns")
-  @ApiNestedQuery(BreakdownFindManyArgs)
+  @ApiNestedQuery(BreakdownReportFindManyArgs)
   @nestAccessControl.UseRoles({
-    resource: "Breakdown",
+    resource: "BreakdownReport",
     action: "read",
     possession: "any",
   })
   async findBreakdowns(
     @common.Req() request: Request,
     @common.Param() params: MachineWhereUniqueInput
-  ): Promise<Breakdown[]> {
-    const query = plainToClass(BreakdownFindManyArgs, request.query);
+  ): Promise<BreakdownReport[]> {
+    const query = plainToClass(BreakdownReportFindManyArgs, request.query);
     const results = await this.service.findBreakdowns(params.id, {
       ...query,
       select: {
@@ -259,7 +259,7 @@ export class MachineControllerBase {
   })
   async connectBreakdowns(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: BreakdownWhereUniqueInput[]
+    @common.Body() body: BreakdownReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       breakdowns: {
@@ -281,7 +281,7 @@ export class MachineControllerBase {
   })
   async updateBreakdowns(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: BreakdownWhereUniqueInput[]
+    @common.Body() body: BreakdownReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       breakdowns: {
@@ -303,7 +303,7 @@ export class MachineControllerBase {
   })
   async disconnectBreakdowns(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: BreakdownWhereUniqueInput[]
+    @common.Body() body: BreakdownReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       breakdowns: {
@@ -319,17 +319,17 @@ export class MachineControllerBase {
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
   @common.Get("/:id/maintenances")
-  @ApiNestedQuery(MaintenanceFindManyArgs)
+  @ApiNestedQuery(MaintenanceReportFindManyArgs)
   @nestAccessControl.UseRoles({
-    resource: "Maintenance",
+    resource: "MaintenanceReport",
     action: "read",
     possession: "any",
   })
   async findMaintenances(
     @common.Req() request: Request,
     @common.Param() params: MachineWhereUniqueInput
-  ): Promise<Maintenance[]> {
-    const query = plainToClass(MaintenanceFindManyArgs, request.query);
+  ): Promise<MaintenanceReport[]> {
+    const query = plainToClass(MaintenanceReportFindManyArgs, request.query);
     const results = await this.service.findMaintenances(params.id, {
       ...query,
       select: {
@@ -364,7 +364,7 @@ export class MachineControllerBase {
   })
   async connectMaintenances(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: MaintenanceWhereUniqueInput[]
+    @common.Body() body: MaintenanceReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       maintenances: {
@@ -386,7 +386,7 @@ export class MachineControllerBase {
   })
   async updateMaintenances(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: MaintenanceWhereUniqueInput[]
+    @common.Body() body: MaintenanceReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       maintenances: {
@@ -408,7 +408,7 @@ export class MachineControllerBase {
   })
   async disconnectMaintenances(
     @common.Param() params: MachineWhereUniqueInput,
-    @common.Body() body: MaintenanceWhereUniqueInput[]
+    @common.Body() body: MaintenanceReportWhereUniqueInput[]
   ): Promise<void> {
     const data = {
       maintenances: {

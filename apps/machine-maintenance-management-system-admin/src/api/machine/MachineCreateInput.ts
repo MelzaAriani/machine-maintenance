@@ -1,11 +1,11 @@
-import { BreakdownCreateNestedManyWithoutMachinesInput } from "./BreakdownCreateNestedManyWithoutMachinesInput";
-import { MaintenanceCreateNestedManyWithoutMachinesInput } from "./MaintenanceCreateNestedManyWithoutMachinesInput";
+import { BreakdownReportCreateNestedManyWithoutMachinesInput } from "./BreakdownReportCreateNestedManyWithoutMachinesInput";
+import { MaintenanceReportCreateNestedManyWithoutMachinesInput } from "./MaintenanceReportCreateNestedManyWithoutMachinesInput";
 import { MaintenanceScheduleCreateNestedManyWithoutMachinesInput } from "./MaintenanceScheduleCreateNestedManyWithoutMachinesInput";
 
 export type MachineCreateInput = {
-  breakdowns?: BreakdownCreateNestedManyWithoutMachinesInput;
+  breakdowns?: BreakdownReportCreateNestedManyWithoutMachinesInput;
   location?: string | null;
-  maintenances?: MaintenanceCreateNestedManyWithoutMachinesInput;
+  maintenances?: MaintenanceReportCreateNestedManyWithoutMachinesInput;
   maintenanceSchedules?: MaintenanceScheduleCreateNestedManyWithoutMachinesInput;
   modelNumber?: string | null;
   name?: string | null;

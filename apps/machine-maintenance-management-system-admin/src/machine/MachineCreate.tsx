@@ -9,8 +9,8 @@ import {
   TextInput,
 } from "react-admin";
 
-import { BreakdownTitle } from "../breakdown/BreakdownTitle";
-import { MaintenanceTitle } from "../maintenance/MaintenanceTitle";
+import { BreakdownReportTitle } from "../breakdownReport/BreakdownReportTitle";
+import { MaintenanceReportTitle } from "../maintenanceReport/MaintenanceReportTitle";
 import { MaintenanceScheduleTitle } from "../maintenanceSchedule/MaintenanceScheduleTitle";
 
 export const MachineCreate = (props: CreateProps): React.ReactElement => {
@@ -19,20 +19,20 @@ export const MachineCreate = (props: CreateProps): React.ReactElement => {
       <SimpleForm>
         <ReferenceArrayInput
           source="breakdowns"
-          reference="Breakdown"
+          reference="BreakdownReport"
           parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
           format={(value: any) => value && value.map((v: any) => v.id)}
         >
-          <SelectArrayInput optionText={BreakdownTitle} />
+          <SelectArrayInput optionText={BreakdownReportTitle} />
         </ReferenceArrayInput>
         <TextInput label="location" source="location" />
         <ReferenceArrayInput
           source="maintenances"
-          reference="Maintenance"
+          reference="MaintenanceReport"
           parse={(value: any) => value && value.map((v: any) => ({ id: v }))}
           format={(value: any) => value && value.map((v: any) => v.id)}
         >
-          <SelectArrayInput optionText={MaintenanceTitle} />
+          <SelectArrayInput optionText={MaintenanceReportTitle} />
         </ReferenceArrayInput>
         <ReferenceArrayInput
           source="maintenanceSchedules"

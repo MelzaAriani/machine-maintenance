@@ -1,13 +1,13 @@
-import { Breakdown } from "../breakdown/Breakdown";
-import { Maintenance } from "../maintenance/Maintenance";
+import { BreakdownReport } from "../breakdownReport/BreakdownReport";
+import { MaintenanceReport } from "../maintenanceReport/MaintenanceReport";
 import { MaintenanceSchedule } from "../maintenanceSchedule/MaintenanceSchedule";
 
 export type Machine = {
-  breakdowns?: Array<Breakdown>;
+  breakdowns?: Array<BreakdownReport>;
   createdAt: Date;
   id: string;
   location: string | null;
-  maintenances?: Array<Maintenance>;
+  maintenances?: Array<MaintenanceReport>;
   maintenanceSchedules?: Array<MaintenanceSchedule>;
   modelNumber: string | null;
   name: string | null;

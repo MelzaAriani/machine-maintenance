@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
-import { MaintenanceModule } from "./maintenance/maintenance.module";
 import { MachineModule } from "./machine/machine.module";
-import { BreakdownModule } from "./breakdown/breakdown.module";
+import { MaintenanceReportModule } from "./maintenanceReport/maintenanceReport.module";
 import { MaintenanceScheduleModule } from "./maintenanceSchedule/maintenanceSchedule.module";
+import { BreakdownReportModule } from "./breakdownReport/breakdownReport.module";
 import { UserModule } from "./user/user.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
@@ -21,10 +21,10 @@ import { AuthModule } from "./auth/auth.module";
   imports: [
     ACLModule,
     AuthModule,
-    MaintenanceModule,
     MachineModule,
-    BreakdownModule,
+    MaintenanceReportModule,
     MaintenanceScheduleModule,
+    BreakdownReportModule,
     UserModule,
     HealthModule,
     PrismaModule,

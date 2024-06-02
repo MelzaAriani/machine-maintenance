@@ -11,27 +11,27 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { BreakdownListRelationFilter } from "../../breakdown/base/BreakdownListRelationFilter";
+import { BreakdownReportListRelationFilter } from "../../breakdownReport/base/BreakdownReportListRelationFilter";
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { MaintenanceListRelationFilter } from "../../maintenance/base/MaintenanceListRelationFilter";
+import { MaintenanceReportListRelationFilter } from "../../maintenanceReport/base/MaintenanceReportListRelationFilter";
 import { MaintenanceScheduleListRelationFilter } from "../../maintenanceSchedule/base/MaintenanceScheduleListRelationFilter";
 
 @InputType()
 class MachineWhereInput {
   @ApiProperty({
     required: false,
-    type: () => BreakdownListRelationFilter,
+    type: () => BreakdownReportListRelationFilter,
   })
   @ValidateNested()
-  @Type(() => BreakdownListRelationFilter)
+  @Type(() => BreakdownReportListRelationFilter)
   @IsOptional()
-  @Field(() => BreakdownListRelationFilter, {
+  @Field(() => BreakdownReportListRelationFilter, {
     nullable: true,
   })
-  breakdowns?: BreakdownListRelationFilter;
+  breakdowns?: BreakdownReportListRelationFilter;
 
   @ApiProperty({
     required: false,
@@ -57,15 +57,15 @@ class MachineWhereInput {
 
   @ApiProperty({
     required: false,
-    type: () => MaintenanceListRelationFilter,
+    type: () => MaintenanceReportListRelationFilter,
   })
   @ValidateNested()
-  @Type(() => MaintenanceListRelationFilter)
+  @Type(() => MaintenanceReportListRelationFilter)
   @IsOptional()
-  @Field(() => MaintenanceListRelationFilter, {
+  @Field(() => MaintenanceReportListRelationFilter, {
     nullable: true,
   })
-  maintenances?: MaintenanceListRelationFilter;
+  maintenances?: MaintenanceReportListRelationFilter;
 
   @ApiProperty({
     required: false,

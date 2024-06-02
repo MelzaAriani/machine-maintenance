@@ -26,10 +26,10 @@ import { MachineFindUniqueArgs } from "./MachineFindUniqueArgs";
 import { CreateMachineArgs } from "./CreateMachineArgs";
 import { UpdateMachineArgs } from "./UpdateMachineArgs";
 import { DeleteMachineArgs } from "./DeleteMachineArgs";
-import { BreakdownFindManyArgs } from "../../breakdown/base/BreakdownFindManyArgs";
-import { Breakdown } from "../../breakdown/base/Breakdown";
-import { MaintenanceFindManyArgs } from "../../maintenance/base/MaintenanceFindManyArgs";
-import { Maintenance } from "../../maintenance/base/Maintenance";
+import { BreakdownReportFindManyArgs } from "../../breakdownReport/base/BreakdownReportFindManyArgs";
+import { BreakdownReport } from "../../breakdownReport/base/BreakdownReport";
+import { MaintenanceReportFindManyArgs } from "../../maintenanceReport/base/MaintenanceReportFindManyArgs";
+import { MaintenanceReport } from "../../maintenanceReport/base/MaintenanceReport";
 import { MaintenanceScheduleFindManyArgs } from "../../maintenanceSchedule/base/MaintenanceScheduleFindManyArgs";
 import { MaintenanceSchedule } from "../../maintenanceSchedule/base/MaintenanceSchedule";
 import { MachineService } from "../machine.service";
@@ -149,16 +149,16 @@ export class MachineResolverBase {
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
-  @graphql.ResolveField(() => [Breakdown], { name: "breakdowns" })
+  @graphql.ResolveField(() => [BreakdownReport], { name: "breakdowns" })
   @nestAccessControl.UseRoles({
-    resource: "Breakdown",
+    resource: "BreakdownReport",
     action: "read",
     possession: "any",
   })
   async findBreakdowns(
     @graphql.Parent() parent: Machine,
-    @graphql.Args() args: BreakdownFindManyArgs
-  ): Promise<Breakdown[]> {
+    @graphql.Args() args: BreakdownReportFindManyArgs
+  ): Promise<BreakdownReport[]> {
     const results = await this.service.findBreakdowns(parent.id, args);
 
     if (!results) {
@@ -169,16 +169,16 @@ export class MachineResolverBase {
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
-  @graphql.ResolveField(() => [Maintenance], { name: "maintenances" })
+  @graphql.ResolveField(() => [MaintenanceReport], { name: "maintenances" })
   @nestAccessControl.UseRoles({
-    resource: "Maintenance",
+    resource: "MaintenanceReport",
     action: "read",
     possession: "any",
   })
   async findMaintenances(
     @graphql.Parent() parent: Machine,
-    @graphql.Args() args: MaintenanceFindManyArgs
-  ): Promise<Maintenance[]> {
+    @graphql.Args() args: MaintenanceReportFindManyArgs
+  ): Promise<MaintenanceReport[]> {
     const results = await this.service.findMaintenances(parent.id, args);
 
     if (!results) {

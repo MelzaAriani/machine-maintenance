@@ -11,22 +11,22 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { Breakdown } from "../../breakdown/base/Breakdown";
+import { BreakdownReport } from "../../breakdownReport/base/BreakdownReport";
 import { ValidateNested, IsOptional, IsDate, IsString } from "class-validator";
 import { Type } from "class-transformer";
-import { Maintenance } from "../../maintenance/base/Maintenance";
+import { MaintenanceReport } from "../../maintenanceReport/base/MaintenanceReport";
 import { MaintenanceSchedule } from "../../maintenanceSchedule/base/MaintenanceSchedule";
 
 @ObjectType()
 class Machine {
   @ApiProperty({
     required: false,
-    type: () => [Breakdown],
+    type: () => [BreakdownReport],
   })
   @ValidateNested()
-  @Type(() => Breakdown)
+  @Type(() => BreakdownReport)
   @IsOptional()
-  breakdowns?: Array<Breakdown>;
+  breakdowns?: Array<BreakdownReport>;
 
   @ApiProperty({
     required: true,
@@ -57,12 +57,12 @@ class Machine {
 
   @ApiProperty({
     required: false,
-    type: () => [Maintenance],
+    type: () => [MaintenanceReport],
   })
   @ValidateNested()
-  @Type(() => Maintenance)
+  @Type(() => MaintenanceReport)
   @IsOptional()
-  maintenances?: Array<Maintenance>;
+  maintenances?: Array<MaintenanceReport>;
 
   @ApiProperty({
     required: false,

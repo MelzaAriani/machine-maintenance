@@ -11,25 +11,25 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { BreakdownUpdateManyWithoutMachinesInput } from "./BreakdownUpdateManyWithoutMachinesInput";
+import { BreakdownReportUpdateManyWithoutMachinesInput } from "./BreakdownReportUpdateManyWithoutMachinesInput";
 import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
-import { MaintenanceUpdateManyWithoutMachinesInput } from "./MaintenanceUpdateManyWithoutMachinesInput";
+import { MaintenanceReportUpdateManyWithoutMachinesInput } from "./MaintenanceReportUpdateManyWithoutMachinesInput";
 import { MaintenanceScheduleUpdateManyWithoutMachinesInput } from "./MaintenanceScheduleUpdateManyWithoutMachinesInput";
 
 @InputType()
 class MachineUpdateInput {
   @ApiProperty({
     required: false,
-    type: () => BreakdownUpdateManyWithoutMachinesInput,
+    type: () => BreakdownReportUpdateManyWithoutMachinesInput,
   })
   @ValidateNested()
-  @Type(() => BreakdownUpdateManyWithoutMachinesInput)
+  @Type(() => BreakdownReportUpdateManyWithoutMachinesInput)
   @IsOptional()
-  @Field(() => BreakdownUpdateManyWithoutMachinesInput, {
+  @Field(() => BreakdownReportUpdateManyWithoutMachinesInput, {
     nullable: true,
   })
-  breakdowns?: BreakdownUpdateManyWithoutMachinesInput;
+  breakdowns?: BreakdownReportUpdateManyWithoutMachinesInput;
 
   @ApiProperty({
     required: false,
@@ -44,15 +44,15 @@ class MachineUpdateInput {
 
   @ApiProperty({
     required: false,
-    type: () => MaintenanceUpdateManyWithoutMachinesInput,
+    type: () => MaintenanceReportUpdateManyWithoutMachinesInput,
   })
   @ValidateNested()
-  @Type(() => MaintenanceUpdateManyWithoutMachinesInput)
+  @Type(() => MaintenanceReportUpdateManyWithoutMachinesInput)
   @IsOptional()
-  @Field(() => MaintenanceUpdateManyWithoutMachinesInput, {
+  @Field(() => MaintenanceReportUpdateManyWithoutMachinesInput, {
     nullable: true,
   })
-  maintenances?: MaintenanceUpdateManyWithoutMachinesInput;
+  maintenances?: MaintenanceReportUpdateManyWithoutMachinesInput;
 
   @ApiProperty({
     required: false,

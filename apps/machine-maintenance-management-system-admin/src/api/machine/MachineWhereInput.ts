@@ -1,14 +1,14 @@
-import { BreakdownListRelationFilter } from "../breakdown/BreakdownListRelationFilter";
+import { BreakdownReportListRelationFilter } from "../breakdownReport/BreakdownReportListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { MaintenanceListRelationFilter } from "../maintenance/MaintenanceListRelationFilter";
+import { MaintenanceReportListRelationFilter } from "../maintenanceReport/MaintenanceReportListRelationFilter";
 import { MaintenanceScheduleListRelationFilter } from "../maintenanceSchedule/MaintenanceScheduleListRelationFilter";
 
 export type MachineWhereInput = {
-  breakdowns?: BreakdownListRelationFilter;
+  breakdowns?: BreakdownReportListRelationFilter;
   id?: StringFilter;
   location?: StringNullableFilter;
-  maintenances?: MaintenanceListRelationFilter;
+  maintenances?: MaintenanceReportListRelationFilter;
   maintenanceSchedules?: MaintenanceScheduleListRelationFilter;
   modelNumber?: StringNullableFilter;
   name?: StringNullableFilter;

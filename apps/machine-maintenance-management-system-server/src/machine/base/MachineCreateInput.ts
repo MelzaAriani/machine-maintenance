@@ -11,25 +11,25 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { BreakdownCreateNestedManyWithoutMachinesInput } from "./BreakdownCreateNestedManyWithoutMachinesInput";
+import { BreakdownReportCreateNestedManyWithoutMachinesInput } from "./BreakdownReportCreateNestedManyWithoutMachinesInput";
 import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
-import { MaintenanceCreateNestedManyWithoutMachinesInput } from "./MaintenanceCreateNestedManyWithoutMachinesInput";
+import { MaintenanceReportCreateNestedManyWithoutMachinesInput } from "./MaintenanceReportCreateNestedManyWithoutMachinesInput";
 import { MaintenanceScheduleCreateNestedManyWithoutMachinesInput } from "./MaintenanceScheduleCreateNestedManyWithoutMachinesInput";
 
 @InputType()
 class MachineCreateInput {
   @ApiProperty({
     required: false,
-    type: () => BreakdownCreateNestedManyWithoutMachinesInput,
+    type: () => BreakdownReportCreateNestedManyWithoutMachinesInput,
   })
   @ValidateNested()
-  @Type(() => BreakdownCreateNestedManyWithoutMachinesInput)
+  @Type(() => BreakdownReportCreateNestedManyWithoutMachinesInput)
   @IsOptional()
-  @Field(() => BreakdownCreateNestedManyWithoutMachinesInput, {
+  @Field(() => BreakdownReportCreateNestedManyWithoutMachinesInput, {
     nullable: true,
   })
-  breakdowns?: BreakdownCreateNestedManyWithoutMachinesInput;
+  breakdowns?: BreakdownReportCreateNestedManyWithoutMachinesInput;
 
   @ApiProperty({
     required: false,
@@ -44,15 +44,15 @@ class MachineCreateInput {
 
   @ApiProperty({
     required: false,
-    type: () => MaintenanceCreateNestedManyWithoutMachinesInput,
+    type: () => MaintenanceReportCreateNestedManyWithoutMachinesInput,
   })
   @ValidateNested()
-  @Type(() => MaintenanceCreateNestedManyWithoutMachinesInput)
+  @Type(() => MaintenanceReportCreateNestedManyWithoutMachinesInput)
   @IsOptional()
-  @Field(() => MaintenanceCreateNestedManyWithoutMachinesInput, {
+  @Field(() => MaintenanceReportCreateNestedManyWithoutMachinesInput, {
     nullable: true,
   })
-  maintenances?: MaintenanceCreateNestedManyWithoutMachinesInput;
+  maintenances?: MaintenanceReportCreateNestedManyWithoutMachinesInput;
 
   @ApiProperty({
     required: false,

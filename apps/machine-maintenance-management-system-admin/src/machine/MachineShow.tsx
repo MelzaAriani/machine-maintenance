@@ -24,9 +24,9 @@ export const MachineShow = (props: ShowProps): React.ReactElement => {
         <TextField label="name" source="name" />
         <DateField source="updatedAt" label="Updated At" />
         <ReferenceManyField
-          reference="Breakdown"
+          reference="BreakdownReport"
           target="machineId"
-          label="Breakdowns"
+          label="BreakdownReports"
         >
           <Datagrid rowClick="show">
             <TextField label="breakdownDate" source="breakdownDate" />
@@ -45,9 +45,9 @@ export const MachineShow = (props: ShowProps): React.ReactElement => {
           </Datagrid>
         </ReferenceManyField>
         <ReferenceManyField
-          reference="Maintenance"
+          reference="MaintenanceReport"
           target="machineId"
-          label="Maintenances"
+          label="MaintenanceReports"
         >
           <Datagrid rowClick="show">
             <DateField source="createdAt" label="Created At" />
